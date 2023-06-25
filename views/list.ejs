@@ -9,13 +9,22 @@
     
 <h1>Today is <%=kindDay%> </h1>
 <ul>
-    <li>Comida</li>
-    <li>Refresco</li>
-    <li>porno   </li>
+  
+    
+
+       <% for(i=0; i<=newItems.length; i++ ){%>
+
+
+            <li> <%=newItems[i]%></li>
+
+    <%}%>
+
+    
+   
 </ul>
 
 <form action="/" method="post">
-    <input type="text">
+    <input name="item"  type="text">
     <button type="submit">PUSH</button>
 </form>
     
