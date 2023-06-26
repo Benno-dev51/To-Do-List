@@ -37,12 +37,14 @@ res.render("list",{kindDay:day,newItems:items});
 })
 app.post("/",(req,res)=>{
 
+
   agrega=req.body.item
   res.redirect("/")
   items.push(agrega)
  
    
 
+ 
 
 
 

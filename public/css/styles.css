@@ -38,20 +38,24 @@ h1 {
 }
 
 input:checked+p {
-  text-decoration: line-through;
-  text-decoration-color: #A683E3;
+  text-decoration:line-through;
+  text-decoration-color: #ff0000;
+  color: gray;
 }
+
 
 input[type="checkbox"] {
   margin: 20px;
+  transform: scale(1.9);
+ 
 }
 
 p {
   margin: 0;
   padding: 20px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 200;
-  color: #00204a;
+  color: #f7f8f8;
 }
 
 form {
@@ -62,9 +66,9 @@ form {
 button {
   min-height: 50px;
   width: 50px;
-  border-radius: 50%;
+  border-radius: 30%;
   border-color: transparent;
-  background-color: #A683E3;
+  background-color: #eb300fb0;
   color: #fff;
   font-size: 30px;
   padding-bottom: 6px;
@@ -76,7 +80,8 @@ input[type="text"] {
   height: 60px;
   top: 10px;
   border: none;
-  background: transparent;
+  border-radius: 10px;
+  background: rgba(250, 250, 250, 0.767);
   font-size: 20px;
   font-weight: 200;
   width: 313px;
@@ -84,7 +89,8 @@ input[type="text"] {
 
 input[type="text"]:focus {
   outline: none;
-  box-shadow: inset 0 -3px 0 0 #A683E3;
+  box-shadow: inset 0 -3px 0 0 #580cdb;
+  background-color: #cc77466c;
 }
 
 ::placeholder {

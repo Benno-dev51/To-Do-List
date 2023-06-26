@@ -14,20 +14,20 @@
 <div class="box" id="heading">
     <h1>Today is <%=kindDay%> </h1>
 </div>
+
 <div class="box">
-
-    <ul>
-  
-        <% for(i=0; i<=newItems.length; i++ ){%>
-
-<div class="item">
-    <p> <%=newItems[i]%></p>
-</div>
+        <% for(i=0; i<newItems.length; i++ ){%>
+            <div class="item">
+                <input type="checkbox">
+                <p> <%=newItems[i]%></p>
+                
+            </div>
              
     
+
              <%}%>
  
- </ul>
+ 
 
 </div>
 
@@ -43,8 +43,8 @@
 
 
 
-<form action="/" method="post">
-    <input name="item"  type="text">
+<form   action="/" method="post">
+    <input name="item"  type="text" autocomplete="off" placeholder="Agrege">
     <button type="submit">+</button>
 </form>
     
