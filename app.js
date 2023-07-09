@@ -98,13 +98,15 @@ findItem();
 app.post("/",(req,res)=>{
 
 
-  agrega=req.body.item
-  res.redirect("/")
-  Item.push(agrega)
- 
-   
+  const itemName=req.body.new_item;
 
+  const item=new Items({
+    name:itemName,
+  })
  
+   item.save()
+
+  res.redirect("/")
 
 
 
