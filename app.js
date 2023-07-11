@@ -108,9 +108,11 @@ app.post("/",(req,res)=>{
 
   res.redirect("/")
 
+})
 
+app.post("/delette",(req,res)=>{
 
-
+const checked=req.body.listo==="on" ? "Esta checkeado":"no Esta checkeado"
 
 })
 
