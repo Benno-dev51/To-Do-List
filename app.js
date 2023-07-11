@@ -112,11 +112,23 @@ app.post("/",(req,res)=>{
 
 app.post("/delette",(req,res)=>{
 
-const checked=req.body.listo==="on" ? "Esta checkeado":"no Esta checkeado"
+const itemId=req.body.ready
+const deleteItem=async()=>{
+  try{
+    await Items.deleteOne({_id:itemId})
+    res.redirect("/")
+    console.log("se elimino el registro consulte en la base de datos")
+
+  }
+  catch(error){
+
+        console.log(error)
+  }
+}
+deleteItem();
+
 
 })
-
-
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
