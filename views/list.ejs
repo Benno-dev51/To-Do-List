@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+<!--     solucionar esto del icon ya que no es lo mas optimo -->
+    <link rel="icon" href="data:,">
     <title>TO DO List</title>
+    
 
 </head>
 <body>
@@ -12,16 +15,17 @@
 
 
 <div class="box" id="heading">
-    <h1>Today is <%=kindDay%> </h1>
+    <h1> <%=listTitle%> </h1>
 </div>
 
 <div class="box">
         <% for(i=0; i<newItems.length; i++ ){%>
-            <form action="/delette" method="post">
+            <form action="/delete" method="post">
                 <div class="item">
                     <input type="checkbox" name="ready" value="<%=newItems[i]._id%>" onChange="this.form.submit()">
                     <p> <%=newItems[i].name%></p>    
                 </div>
+                <input type="hidden" name="listName" value="<%=listTitle%>"></input>
            </form>
 
              <%}%>
@@ -29,19 +33,9 @@
 
 
 
-
-
-
-
-
-
- 
-
-
-
-<form   action="/" method="post">
+<form id="item"  action="/" method="post">
     <input name="new_item"  type="text" autocomplete="off" placeholder="Agrege">
-    <button type="submit">+</button>
+    <button type="submit" name="list" value="<%=listTitle%>">+</button>
 </form>
     
 </body>
