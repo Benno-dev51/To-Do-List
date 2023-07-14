@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 const bodyParser = require("body-parser");
+const _ = require('lodash');
 const mongoose=require("mongoose")
+
 
 var agrega="";
 
@@ -152,7 +154,7 @@ app.post("/delete", async (req, res) => {
 
 
 app.get('/:customListName', (req, res) =>{
-  const customListName = req.params.customListName;
+  const customListName =_.capitalize( req.params.customListName);
   console.log(customListName);
 
  
