@@ -8,7 +8,8 @@ const mongoose=require("mongoose")
 
 var agrega="";
 
-mongoose.connect('mongodb://127.0.0.1:27017/todoListDB');
+mongoose.connect("mongodb+srv://benitolopez5133:TJemZwb8bz3xEzh2@cluster0.55f8vf9.mongodb.net/todoListDB");
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"))
@@ -17,7 +18,6 @@ app.set('view engine','ejs')
 const itemsSchema={
   name:String,
 }
-
 
 const  Items=mongoose.model("item",itemsSchema)
 const item1= new Items({
@@ -58,6 +58,7 @@ catch (error) {
 }
 }
  insertItems() 
+
 app.get('/', (req, res) => {
   
   let today=new Date();
@@ -68,10 +69,8 @@ const options={
     day:"numeric",
     month :"long",
 
-
 }
 let day=today.toLocaleDateString("en-US",options)
-
 
 const findItem = async () => {
   try {
@@ -79,8 +78,6 @@ const findItem = async () => {
     const itemseach = await Items.find();
     
       res.render("list",{listTitle:"Today",newItems:itemseach});
-    
-    
     
    
   } catch (error) {
@@ -93,6 +90,7 @@ findItem();
 
 
 })
+
 app.post("/", async (req, res) => {
   const itemName = req.body.new_item;
   const listName = req.body.list;
@@ -150,14 +148,10 @@ app.post("/delete", async (req, res) => {
 });
 
 
-
-
-
 app.get('/:customListName', (req, res) =>{
   const customListName =_.capitalize( req.params.customListName);
   console.log(customListName);
 
- 
 const foundDuplicate=async()=>{
   try {
     // Verificar si el nombre ya existe en la base de datos
